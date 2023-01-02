@@ -1,0 +1,18 @@
+<p>Hello</p>
+<!-- Button to clear selection -->
+<button (click)="clearSelection()">Clear Selection</button>
+<button (click)="addItems()">+ Add Rows</button>
+<!-- AG Grid Angular Component  [rowData]="rowData$ | async" (gridReady)="onGridReady($event)"-->
+<ag-grid-angular
+   style="width: 100%; height: 100%"
+   class="ag-theme-alpine"
+   [gridOptions]="gridOptions"
+   [columnDefs]="columnDefs"
+   [defaultColDef]="defaultColDef"
+  
+   [rowSelection]="'multiple'"
+   [animateRows]="true"
+   
+   (cellClicked)="onCellClicked($event)"
+   (cellValueChanged)="onCellValueChanged()"
+ ></ag-grid-angular>
